@@ -66,6 +66,8 @@ class Surface extends JPanel implements MouseListener, MouseMotionListener, Acti
         this.frame = frame;
         setup();
         initTimer();
+        addMouseListener(this); //in order not to add every time an lister
+        addMouseMotionListener(this); //same here
     }
 
     public void setup(){
@@ -107,8 +109,6 @@ class Surface extends JPanel implements MouseListener, MouseMotionListener, Acti
         rect1 = new Rectangle2D.Float(x1, y1, width1, height1);
         rect2 = new Rectangle2D.Float(x2, y2, width2, height2);
         this.setBackground(Color.black);
-        addMouseListener(this);
-        addMouseMotionListener(this);
     }
 
     public void initTimer(){
